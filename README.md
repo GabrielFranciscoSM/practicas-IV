@@ -1,7 +1,7 @@
 # Practicas IV
 
-**Cliente:** Estudiante y tutores de un TFG
+**Cliente:** Persona que viaja mucho
 
-**Problema:** Como estudiante guardo muchos articulos de investigación que me parecen interesantes. Etiquetarlos y clasificarlos manualmente es un proceso tedioso, así que los guardo en una carpeta. El problema es que cuando los necesito tardo mucho emencontrar los que tratan los temas que busco, ralentizando el desarrollo del TFG y complicandome el formar una buena bibliografia. 
+**Problema:** Me gusta visitar a mi familia que vive en distintas partes de Andalucía. Siempre que voy a uno de estos viajes hago mal la maleta y me cuesta planificar que tipo de ropa llevar para los días que voy. A veces me falta ropa y tengo que repetir; pero otras llevo de más, cargo con una maleta gigante y pesada, y no me pongo toda la ropa que llevo; incluso hay veces que me faltan prendas de un tipo, pero tengo de sobra de otro. Lo peor es cuando me sorprende el tiempo y no voy preparado.
 
 ## [Verificación de configuración](doc_adicional/doc_adicional.md)
