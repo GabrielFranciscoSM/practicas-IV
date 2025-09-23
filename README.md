@@ -1,7 +1,10 @@
 # Practicas IV
 
-**Cliente:** Persona que viaja mucho
+**Cliente:** Estudiante de TFG, tutores o investigadores
 
-**Problema:** Me gusta visitar a mi familia que vive en distintas partes de Andalucía. Siempre que voy a uno de estos viajes hago mal la maleta y me cuesta planificar que tipo de ropa llevar para los días que voy. A veces me falta ropa y tengo que repetir; pero otras llevo de más, cargo con una maleta gigante y pesada, y no me pongo toda la ropa que llevo; incluso hay veces que me faltan prendas de un tipo, pero tengo de sobra de otro. Lo peor es cuando me sorprende el tiempo y no voy preparado.
+**Problema:** Como estudiante de TFG descargo muchos artículos de investigación que veo de manera superficial para después usarlos, pero soy incapaz de organizarlos de tal manera que en la redacción del TFG pueda centrarme en los relevantes para cada situación. Organizarlos es una tarea manual y tediosa, ya que involucra leer los artículos y poder relacionarlos entre sí.
+
+
+**Intuición de la solución:** Usar técnicas de NLP como TF-IDF y k-mean clustering para agrupar documentos similares de forma automática. Para obtener los papers existen archivos públicos como ArXiv, que además ofrecen muchos papers en html.
 
 ## [Verificación de configuración](doc_adicional/doc_adicional.md)
