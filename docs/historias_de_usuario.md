@@ -8,7 +8,7 @@ Como Juanito no puedo saber qué palabras son [importantes](./Conceptos.md#palab
 
 ## HU 003
 
-Como Juanito tengo muchos articulos pero no están clasificados según su [similitud](./Conceptos.md#Similitud-entre-documentos)
+Como Juanito tengo muchos articulos pero no están clasificados según su [similitud](./Conceptos.md#Similitud-entre-documentos) y me cuesta usarlos para mi TFG.
 
 ## HU 004
 
