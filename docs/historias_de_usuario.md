@@ -4,11 +4,11 @@ Como Juanito (estudiante) tengo una bibliografía pero no los documentos de text
 
 ## HU 002
 
-Como Juanito no puedo saber que palabras son importantes en un articulo sin leerlo anteriormente
+Como Juanito no puedo saber qué palabras son [importantes](./Conceptos.md#palabras-importantes-en-documentos) en un articulo sin leerlo anteriormente
 
 ## HU 003
 
-Como Juanito tengo muchos articulos pero no están clasificados según similitud
+Como Juanito tengo muchos articulos pero no están clasificados según su [similitud](./Conceptos.md#Similitud-entre-documentos)
 
 ## HU 004
 
