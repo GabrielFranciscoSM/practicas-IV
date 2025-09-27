@@ -17,6 +17,8 @@ Para empatizar con el cliente/usuarios, se han seguid las metodologías *User Jo
 
 En el archivo [historias de usuario](./docs/historias_de_usuario.md) se listan diferentes historias de usuario, numeradas y ordenadas convenientemente.
 
+Estas historias de usuarios se plantean en los issues #3 , #4 , #5 , #6 .
+
 #### Conceptos
 
 Para aclarar y facilitar la comprensión de las historias de usuario, en el archivo [conceptos](./docs/conceptos.md) se encuentran definiciones y referencias importantes. Además, desde las propias historias de usuario se hace referencia a estos conceptos.
