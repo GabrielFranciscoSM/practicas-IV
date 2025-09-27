@@ -11,7 +11,7 @@
 ## Estructura general y planificación del proyecto
 
 ### Metodologías previas a las HU
-Para empatizar con el cliente/usuarios, se han seguid las metodologías *User Journey* y *Personas*, y se han generado las consiguiente documentación: [User Journey](./docs/user_journey.md), [Personas](./docs/personas.md)
+Para empatizar con el cliente/usuarios, se han seguid las metodologías *User Journey* y *Personas*, y se han generado las consiguiente documentación: [User Journey](./docs/user_journey.md), [Personas](./docs/personas.md).
 
 ### Historias de Usuario
 

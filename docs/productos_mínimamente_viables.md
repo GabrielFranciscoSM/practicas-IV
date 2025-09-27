@@ -12,21 +12,21 @@
 
 - HU0
 
-## Milestone 1: Necesito resumir un artículo en pocas palabras
+## Milestone 1: Resumir un artículo en pocas palabras
 ### PMV 1
 
 - **Entregable**: Dada una bibliografía de artículos academicos, se devuelven los términos más importantes en cada uno
-- **Validez**: Se comprueba que se genere un conjunto de palabras asociado a cada artículo, que estén en este. Además, se comprueba para un número reducido manualmente que las palabras sean relevantes.
+- **Validez**: Se comprueba que se genere un conjunto de palabras asociado a cada artículo, y que estén en este. Además, se comprueba para un número reducido manualmente que las palabras sean relevantes.
 - **Soporte**: Código, relación artículos / palabras importantes
 
 ### HU asociadas
 
 - HU1
 
-## Milestone 2: Necesito organizar los artículos que tengo automáticamente
+## Milestone 2: Organizar los artículos que tengo automáticamente
 ### PMV 2
 
-- **Entregable**: Dados unos archivos, se organizan automáticamente por similitud
+- **Entregable**: Dados unos articulos, se organizan automáticamente por similitud
 - **Validez**: Se comprueba que la cantidad de archivos sea la misma y que sean los mismos, y se comparan palabras importantes dentro de grupos y fuera
 - **Soporte**: Código, estructura de archivos
 
@@ -34,7 +34,7 @@
 
 - HU2
 
-## Milestone 3: Necesito compartir archivos entre alumno y profesores
+## Milestone 3: Compartir archivos entre alumno y profesores
 ### PMV 3
 
 - **Entregable**: Si se crea un grupo, tutores y estudiante pueden compartir el acceso a los archivos
