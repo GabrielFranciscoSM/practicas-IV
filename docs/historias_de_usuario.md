@@ -1,14 +1,14 @@
 ## HU 0
 
-Como Juanito (estudiante) tengo una bibliografía pero no el texto de los artículos a los que hace referencia
+Como Juanito (estudiante) tengo una bibliografía pero no los documentos de texto de los artículos a los que hace referencia
 
 ## HU 1
 
-Como Juanito no sé qué términos son más importantes en mi bibliografía
+Como Juanito no puedo saber que palabras son importantes en un articulo sin leerlo anteriormente
 
 ## HU 2
 
-Como Juanito no puedo organizar eficientemente mis articulos
+Como Juanito tengo muchos articulos pero no están clasificados según similitud
 
 ## HU 3
 

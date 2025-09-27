@@ -6,4 +6,4 @@ Para ello, le paso un archivo con mi bibliografía a la aplicación para tener l
 
 Para compartir los articulos con mis tutores creo un "grupo" y la aplicación genera un código y contraseña, que deberán de introducir mis tutores.
 
-A partir de este momento accederé para ver los artículos, y, en todo caso, ampliar la bibliografía, haciendo que se vuelvan a organizar. 
+A partir de este momento accederé para ver los artículos, y, en todo caso, ampliaré la bibliografía, haciendo que se vuelvan a organizar. 
