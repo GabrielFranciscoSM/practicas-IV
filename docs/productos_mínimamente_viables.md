@@ -10,7 +10,7 @@
 
 ### HU asociadas
 
-- HU0
+- HU2
 
 ## Milestone 1: Una API de obtención de términos clave
 ### PMV 1
