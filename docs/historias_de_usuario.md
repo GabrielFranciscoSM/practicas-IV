@@ -1,15 +1,16 @@
 ## HU 001
 
-Como Juanito (estudiante) tengo una bibliografía pero no los documentos de texto de los artículos a los que hace referencia
+Como Juanito leer un articulo entero para darme cuenta que no tiene nada que ver con lo que estoy investigando me frustra
 
 ## HU 002
 
-Como Juanito no puedo saber qué palabras son [importantes](./Conceptos.md#palabras-importantes-en-documentos) en un articulo sin leerlo anteriormente
+Como Juanito (estudiante) he recabado una lista de articulos de investigación para mi TFG pero me abruma la cantidad de información en bruto que tengo.
 
 ## HU 003
 
-Como Juanito tengo muchos articulos pero no están clasificados según su [similitud](./Conceptos.md#Similitud-entre-documentos) y me cuesta usarlos para mi TFG.
+Como Juanito me he descargado unos cuantos papers sobre Metodología ágil. Cuando me los he leido y algunos decían prácticamente lo mismo que otros, así que no me han servido de nada.
 
 ## HU 004
 
-Como Pepita (Tutora) no puedo ver la bibliografía de mi alumno
+Como Pepita (Profesora) estoy escribiendo 4 artículos con otros investigadores y tutorizando 5 TFGs, y tener organizados todos los artículos de investigación es un lio.
+
