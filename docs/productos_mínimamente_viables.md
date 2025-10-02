@@ -12,7 +12,7 @@
 
 - HU0
 
-## Milestone 1: API de obtención de términos clave
+## Milestone 1: Una API de obtención de términos clave
 ### PMV 1
 
 - **Entregable**: Dada una bibliografía de artículos academicos, se devuelven los términos más importantes en cada uno
@@ -23,7 +23,7 @@
 
 - HU1
 
-## Milestone 2: Aplicación web de organización de documentos
+## Milestone 2: Acutalización de la API con organización de documentos
 ### PMV 2
 
 - **Entregable**: Dados unos articulos, se organizan automáticamente por similitud
@@ -34,7 +34,7 @@
 
 - HU2
 
-## Milestone 3: Directorio compartido por profesores y alumnos
+## Milestone 3: Un directorio de articulos compartido por profesores y alumnos
 ### PMV 3
 
 - **Entregable**: Si se crea un grupo, tutores y estudiante pueden compartir el acceso a los archivos
