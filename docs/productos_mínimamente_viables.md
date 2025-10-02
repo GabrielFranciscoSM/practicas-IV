@@ -1,6 +1,6 @@
 # Productos Mínimamente Viables
 
-## Milestone 0 (interno): Un módulo que defina la estructura de datos que se usará para trabajar los documentos, así como su interfaz, sin implementar.
+## Milestone 0 (interno): Un módulo que defina la representación informática que se usará para trabajar con los documentos, así como su interfaz, sin implementar.
 
 ### PMV 0
 
