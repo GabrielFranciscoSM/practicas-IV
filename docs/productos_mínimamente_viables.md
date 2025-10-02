@@ -12,7 +12,7 @@
 
 ### HU asociadas
 
-- HU2
+- HU1
 
 ## Milestone 1: Un script de obtención de términos clave
 ### PMV 1
@@ -40,7 +40,7 @@
 
 ### HU asociadas
 
-- HU2
+- HU2, HU3
 
 ## Milestone 3: Un directorio de articulos compartido por profesores y alumnos
 ### PMV 3
@@ -54,4 +54,4 @@
 
 ### HU asociadas
 
-- HU3
+- HU4

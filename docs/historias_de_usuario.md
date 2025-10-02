@@ -1,10 +1,10 @@
 ## HU 001
 
-Como Juanito (estudiante) leer un articulo entero para darme cuenta que no tiene nada que ver con lo que estoy investigando me frustra
+Como Juanito (estudiante) he recabado una lista de articulos de investigación para mi TFG pero me abruma la cantidad de información en bruto que tengo.
 
 ## HU 002
 
-Como Juanito he recabado una lista de articulos de investigación para mi TFG pero me abruma la cantidad de información en bruto que tengo.
+Como Juanito leer un articulo entero para darme cuenta que no tiene nada que ver con lo que estoy investigando me frustra
 
 ## HU 003
 
