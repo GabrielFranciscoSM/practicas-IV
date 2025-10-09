@@ -41,17 +41,3 @@
 ### HU asociadas
 
 - HU2, HU3
-
-## Milestone 3: Una API que permita compartir un directorio de artículos organizados
-### PMV 3
-
-- **Entregable**: Si se crea un grupo, los investigadores pueden compartir la estructura de archivos y directorios.
-- **Validez**:
-  - Se comprueba que se generen un código y una contraseña de acceso.
-  - Se comprueba que funcionen correctamente desde varios dispositivos.
-  - Se comprueba que se necesita la contraseña correcta para entrar en un grupo.
-- **Soporte**: Código fuente, infraestructura en la nube
-
-### HU asociadas
-
-- HU4
