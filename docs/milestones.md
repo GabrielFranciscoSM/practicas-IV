@@ -17,7 +17,7 @@
 ## Milestone 1: Un módulo de procesamiento semántico de texto
 ### PMV 1
 
-- **Entregable**: Dada una lista de artículos académicos, se devuelven sus representaciones semánticas.
+- **Entregable**: Un módulo de procesamiento de documentos que dado un documento extraiga su representación semántica.
 - **Validez**:
   - Se comprueba que por cada documento exista una representación semántica.
   - Se comprueba que dos artículos parecidos tienen una representación parecida mediante la distancia del coseno.
@@ -30,7 +30,7 @@
 ## Milestone 2: Un módulo de organización de documentos
 ### PMV 2
 
-- **Entregable**: Dados unos artículos, se organizan automáticamente por similitud.
+- **Entregable**: Un módulo de organización de documentos que contenga la lógica de negocio para organizar artículos según su representación semántica.
 - **Validez**:
   - Se comprueba que la cantidad de archivos sea la misma que antes.
   - Se comprueba que sean los mismos.
