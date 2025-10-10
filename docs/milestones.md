@@ -4,7 +4,7 @@
 
 ### PMV 0
 
-- **Entregable**: Uno o varios módulos que representen los conceptos clave suficientes para resolver las HU, siguiendo las buenas prácticas.
+- **Entregable**: Uno o varios módulos que representen las entidades y objetos valor del dominio del problema para resolver las HU, siguiendo las buenas prácticas de organización de ficheros, ámbito, mutabilidad y privacidad, según el lenguaje de programación usado.
 - **Validez**:
   - Se han definido las entidades y objetos valor del dominio del problema reflejado en las historias asociadas.
   - Se han seguido las buenas prácticas durante su desarrollo.
