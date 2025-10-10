@@ -2,7 +2,7 @@
 
 ## Objetivo 0
 
-| Credenciales git para commits | Configuración SSH correcta |
+| Credenciales git para commits | Configuración ssh correcta |
 |-------------------------------|----------------------------|
 | ![gitconf](gitConf.png)       | ![sshconf](sshConf.png)    |
 
