@@ -1,6 +1,6 @@
 # Productos mínimamente viables
 
-## Milestone 0 (interno): Uno o varios módulos que representen los conceptos clave suficientes para resolver las HU, siguiendo las buenas prácticas
+## Milestone 0 (interno): Uno o varios módulos que representen los conceptos clave suficientes para resolver las HU, siguiendo las buenas prácticas.
 
 ### PMV 0
 
@@ -14,30 +14,19 @@
 
 - HU1
 
-## Milestone 1: Un módulo de procesamiento semántico de texto
+
+
+## Milestone 1: Código fuente que implementa la lógica de negocio suficiente que se especifica en las HU asociadas
+
 ### PMV 1
 
-- **Entregable**: Un módulo de procesamiento de documentos que dado un documento extraiga su representación semántica.
-- **Validez**:
-  - Se comprueba que por cada documento exista una representación semántica.
-  - Se comprueba que dos artículos parecidos tienen una representación parecida mediante la distancia del coseno.
-  - Se comprueba que dos artículos diferentes tengan una representación diferente mediante la distancia del coseno.
+- **Entregable**: Código fuente que implemente la lógica de negocio suficiente para organizar documentos según su representación semántica tal como se especifica en las HU 1,2 y 3, siguiendo las buenas prácticas de trabajo en github.
+
+- **Validación**:
+  - Se han seguido las buenas prácticas de trabajo con github, primero definiendo problemas en Issues y posteriormente solucionandolos en pulls requests asociadas.
+
+- **Soporte**: Código fuente
 
 ### HU asociadas
 
-- HU1, HU2
-
-## Milestone 2: Un módulo de organización de documentos
-### PMV 2
-
-- **Entregable**: Un módulo de organización de documentos que contenga la lógica de negocio para organizar artículos según su representación semántica.
-- **Validez**:
-  - Se comprueba que la cantidad de archivos sea la misma que antes.
-  - Se comprueba que sean los mismos.
-  - Se validan los clústeres con diferentes métricas:
-    - Suma de los cuadrados dentro del clúster
-    - Coeficiente de silueta
-
-### HU asociadas
-
-- HU2, HU3
+- HU1, HU2, HU3
