@@ -6,8 +6,8 @@
 
 - **Entregable**: Uno o varios módulos que representen los conceptos clave suficientes para resolver las HU, siguiendo las buenas prácticas.
 - **Validez**:
-  - Se comprueba que las estructuras definidas son una base coherente y suficiente para resolver las HU.
-  - Se comprueba que se han seguido las buenas prácticas.
+  - Se han definido las entidades y objetos valor del dominio del problema reflejado en las historias asociadas.
+  - Se han seguido las buenas prácticas durante su desarrollo.
 - **Soporte**: Texto estructurado.
 
 ### HU asociadas
