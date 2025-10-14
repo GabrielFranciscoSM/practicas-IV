@@ -1,12 +1,12 @@
 # Productos mínimamente viables
 
-## Milestone 0 (interno): Uno o varios módulos que representen los conceptos clave suficientes para resolver las HU, siguiendo las buenas prácticas.
+## Milestone 0 (interno): Código fuente que representen los conceptos clave suficientes para resolver las HU, siguiendo las buenas prácticas.
 
-- **Entregable**: Uno o varios módulos que representen las entidades y objetos valor del dominio del problema para resolver las HU, siguiendo las buenas prácticas de organización de ficheros, ámbito, mutabilidad y privacidad, según el lenguaje de programación usado.
+- **Entregable**: Código fuente que representen las entidades y objetos valor del dominio del problema para resolver las HU, siguiendo las buenas prácticas de organización de ficheros, ámbito, mutabilidad y privacidad, según el lenguaje de programación usado.
 - **Validez**:
   - Se han definido las entidades y objetos valor del dominio del problema reflejado en las historias asociadas.
   - Se ha avanzado siguiendo la metodología de la asignatura, y en específico la(s) propuesta(s) en el Objetivo 2
-- **Soporte**: Texto estructurado.
+- **Soporte**: Código fuente
 
 ### HU asociadas
 
