@@ -16,10 +16,10 @@
 
 ## Milestone 1: Código fuente que implementa la lógica de negocio suficiente que se especifica en las HU asociadas
 
-- **Entregable**: Código fuente que implemente la lógica de negocio suficiente para organizar documentos tal como se especifica en las HU 1,2 y 3, siguiendo las buenas prácticas de trabajo en github.
+- **Entregable**: Código fuente que implemente la lógica de negocio suficiente para organizar documentos tal como se especifica en las HU 1,2 y 3, siguiendo las buenas prácticas y principios propuestos en el objetivo 4.
 
 - **Validación**:
-  - Se han seguido las buenas prácticas de trabajo con github, primero definiendo problemas en Issues y posteriormente solucionandolos en pulls requests asociadas.
+  - Se han seguido las metodologías de la asignatura, como el trabajo en github primero definiendo problemas en Issues y posteriormente solucionandolos en pulls requests asociadas.
 
 - **Soporte**: Código fuente
 
