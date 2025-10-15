@@ -1,6 +1,6 @@
-## HU1 Artículos que contienen los mismos términos clave pero tratan temas diferentes o, desde diferentes perspectivas, no se pueden clasificar según palabras clave
+## HU1 Identificar qué artículos de mi colección abordan el mismo subtema o enfoque de investigación
 
-Javier, como investigador, tiene una **colección** de 100 **artículos de investigación** sobre "Fuzzy Sets". Una simple búsqueda por palabras clave le devuelve casi todos los artículos. Sin embargo, sabe que algunos se centran en la aplicación práctica y otros en la teoría, así que encontrar los **artículos de investigación** de un **grupo** le resulta muy tedioso.
+Javier, como investigador, tiene una **colección** de 100 **artículos de investigación** sobre "Fuzzy Sets". Sabe que algunos se centran en aplicaciones prácticas, otros en fundamentos teóricos, y otros en dominios específicos (medicina, finanzas, etc.), pero no tiene forma de identificar rápidamente qué artículos comparten el mismo enfoque o subtema. Necesita descubrir qué **artículos de investigación** de su **colección** tratan realmente sobre lo mismo más allá de compartir las mismas palabras clave, para poder trabajar con **grupos** de artículos relacionados temáticamente y asignar lecturas coherentes a sus estudiantes según sus intereses específicos.
 
 ## HU2 El uso de sinónimos y abreviaturas me dificulta la búsqueda de artículos por términos clave
 
