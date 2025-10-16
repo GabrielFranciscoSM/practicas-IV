@@ -27,7 +27,7 @@ El usuario tiene una gran cantidad de artículos de investigación y es incapaz 
 
 #### Despues
 
-1. El usuario entra en la plaicación
+1. El usuario entra en la aplicación
 2. El usuario indica que artículos quiere agrupar
 3. El usuario genera las agrupaciones según su similitud semántica
 4. El usuario dispone de los grupos generados
