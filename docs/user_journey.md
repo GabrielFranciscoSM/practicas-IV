@@ -29,5 +29,5 @@ El usuario tiene una gran cantidad de artículos de investigación y es incapaz 
 
 1. El usuario entra en la aplicación
 2. El usuario indica que artículos quiere agrupar
-3. El usuario genera las agrupaciones según su similitud semántica
+3. El usuario genera las agrupaciones según su similitud semántica teniendo en cuenta todas las palabras del documento
 4. El usuario dispone de los grupos generados
