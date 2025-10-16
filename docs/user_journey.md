@@ -25,7 +25,7 @@ El usuario tiene una gran cantidad de artículos de investigación y es incapaz 
 3. El Usuario relaciona términos entre documentos, aunque no sean identicos (ej: "CNN" y "Convolutional Neural Network"), y discrimina documentos que comparten términos pero no estan relacionados(ej: "Aplicaciones de CNN" y "Introducción a la teoría de las CNN")
 4. El Usuario intenta agrupar los artículos 100 que ha encontrado según el criterio anterior 
 
-#### Despues
+#### Después
 
 1. El usuario entra en la aplicación
 2. El usuario indica que artículos quiere agrupar
