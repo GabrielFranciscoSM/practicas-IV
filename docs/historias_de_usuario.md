@@ -1,6 +1,6 @@
 ## HU1 Organizar y buscar artículos de investigación de forma eficiente considerando variaciones terminológicas
 
-Como investigador, tengo una **colección** de **artículos de investigación** sobre un tema específico (por ejemplo, "Fuzzy Sets" o "Redes Neuronales") y necesito poder identificar rápidamente qué artículos comparten el mismo enfoque o subtema (aplicaciones prácticas, fundamentos teóricos, dominios específicos como medicina o finanzas). Sin embargo, no tengo forma de **agrupar** eficientemente los **artículos de investigación** por temas relacionados temáticamente. Además, cuando busco por palabras clave, la variedad de sinónimos y abreviaturas utilizados por diferentes autores (como "CNN" vs "Convolutional Neural Networks") me impide encontrar todos los trabajos relevantes, perdiendo artículos cruciales que usan terminología diferente para conceptos idénticos.
+Como investigador, tengo una **colección** de **artículos de investigación** sobre un tema específico (por ejemplo, "Fuzzy Sets" o "Redes Neuronales"). Tengo tantos que no puedo **identificar** rápidamente qué **artículos de investigación** que comparten el mismo enfoque o subtema (aplicaciones prácticas, fundamentos teóricos, dominios específicos como medicina o finanzas).
 
 ## HU2 Construir y mantener una base de conocimiento viva para un equipo
 
