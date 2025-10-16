@@ -15,19 +15,10 @@ Para empatizar con el cliente/usuarios, se han seguid las metodologías *User Jo
 
 ### Historias de Usuario
 
-En el archivo [historias de usuario](./docs/historias_de_usuario.md) se listan diferentes historias de usuario, numeradas y ordenadas convenientemente.
+En el archivo [historias de usuario](./docs/historias_de_usuario.md) se lista la historia de usuario, numerada convenientemente.
 
-Estas historias de usuarios se plantean en los issues #3 , #4 , #5 , #6 .
-
-#### Conceptos
-
-Para aclarar y facilitar la comprensión de las historias de usuario, en el archivo [conceptos](./docs/conceptos.md) se encuentran definiciones y referencias importantes. Además, desde las propias historias de usuario se hace referencia a estos conceptos.
+Esta historia de usuario se plantea en el issue #3.
 
 ### Milestones y productos mínimamente viables
 
-Tras haber completado los archivos anteriores, se crean los [Productos mínimamente viables](./docs/productos_mínimamente_viables.md). Cada uno de ellos consta de:
-- Milestone asociado
-- Entregable
-- Validez
-- Soporte
-- HU asociadas
+Tras haber completado los archivos anteriores, se crean los [Productos mínimamente viables](./docs/productos_mínimamente_viables.md). 
