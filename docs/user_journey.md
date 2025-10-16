@@ -18,9 +18,16 @@ El usuario tiene una gran cantidad de artículos de investigación y es incapaz 
 
 ### Qué pasos tiene que dar para obtener la solución a su problema
 
-1. Accede a la aplicación.
-2. Proporciona los documentos a la aplicación.
-3. Espera a que los documentos hayan sido procesados.
-4. Indica que quiere generar agrupaciones para los documentos.
-5. Espera a que el algoritmo de agrupación agrupe los documentos, convenientemente representados en vectores.
-6. Tiene a su disposición diferentes directorios dónde se agrupan sus documentos por temas.
+#### Antes
+
+1. El Usuario tiene una colección de 100 articulos de investigación
+2. El Usuario lee todos los artículos
+3. El Usuario relaciona términos entre documentos, aunque no sean identicos (ej: "CNN" y "Convolutional Neural Network"), y discrimina documentos que comparten términos pero no estan relacionados(ej: "Aplicaciones de CNN" y "Introducción a la teoría de las CNN")
+4. El Usuario intenta agrupar los artículos 100 que ha encontrado según el criterio anterior 
+
+#### Despues
+
+1. El usuario entra en la plaicación
+2. El usuario indica que artículos quiere agrupar
+3. El usuario genera las agrupaciones según su similitud semántica
+4. El usuario dispone de los grupos generados
