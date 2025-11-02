@@ -37,11 +37,12 @@ Una justificación más detallada se encuentra [Aquí](/docs/Justificacion_gesto
 Guía rápida para empezar a usar el proyecto
 
 1. Ejecuta ```Bun install``` para instalar los módulos de [package.json](/package.json)
-2. Ejecuta ```Bun start``` para lanzar el proeycto
 
 ## Desarrollo
 
 ### Comprobación de sintaxis 
 
 Se usará la orden check, ```Bun check```,  para comprobar la sintaxis de los archivos .ts
+
+Se usará la orden lint, ```Bun lint```,  para comprobar la sintaxis de los archivos .ts
 
