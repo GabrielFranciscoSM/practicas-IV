@@ -1,2 +1,6 @@
 lenguaje: typescript
 entidad: src/services/agrupadorarticulos.ts
+automatizar:
+  fichero: package.json
+  orden: bun 
+  

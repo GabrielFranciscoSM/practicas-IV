@@ -1,0 +1,23 @@
+{
+  "name": "docu-cluster",
+  "version": "0.3.1",
+  "description": "A clustered documentation generator",
+  "scripts": {
+    "start": "bun run index.ts",
+    "check": "bun tsc --noEmit"
+  },
+  "author": "Gabriel Sánchez",
+  "license": "MIT",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "^1.3.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "typescript-eslint": "^8.46.2"
+  }
+}
