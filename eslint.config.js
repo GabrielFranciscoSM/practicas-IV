@@ -1,40 +1,18 @@
-// @ts-check
+import { defineConfig } from "eslint/config";
+import tsParser from "@typescript-eslint/parser";
+import tsPlugin from "@typescript-eslint/eslint-plugin";
 
-import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import prettierConfig from 'eslint-config-prettier';
-
-export default tseslint.config(
+export default defineConfig([
   {
-    // Global ignores
-    ignores: ['dist/', 'build/', 'node_modules/', '*.config.*', '.vscode/', '*.d.ts'],
-  },
-  {
-    // Base configuration for all files
-    files: ['**/*.js', '**/*.ts'],
-    // Apply recommended rules from ESLint and typescript-eslint
-    extends: [
-      eslint.configs.recommended,
-      ...tseslint.configs.recommendedTypeChecked,
-    ],
-    // Language options
+    files: ["**/*.ts", "**/*.cts", "**/*.mts"],
     languageOptions: {
-      parser: tseslint.parser,
-      parserOptions: {
-        project: true,
-        tsconfigRootDir: import.meta.dirname,
-      },
-      globals: {
-        node: true,
-        es2021: true,
-      }
+      parser: tsParser,
+      sourceType: "module",
     },
-    // Custom rules
+  plugins: { "@typescript-eslint": tsPlugin },
     rules: {
-      'no-console': 'off',
-      '@typescript-eslint/explicit-function-return-type': 'off'
+      "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
+      "@typescript-eslint/explicit-function-return-type": "off",
     },
-  },
-  // Add Prettier config last to override other formatting rules
-  prettierConfig
-);
+  }
+]);
