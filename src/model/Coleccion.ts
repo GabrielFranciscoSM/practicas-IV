@@ -3,11 +3,9 @@ import { Articulo } from "./Articulo";
 export class Coleccion {
   public readonly articulos: Articulo[];
 
-  constructor(articulos: Articulo[]) {
-    this.articulos = articulos;
-  }
+  constructor(public articulos: Articulo[]) {}
 
   public static errorColeccionVacia(): string {
-    return "La colección debe contener al menos un artículo.";
+    throw new Error("La colección debe contener al menos un artículo.");
   }
 }
