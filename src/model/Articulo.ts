@@ -3,11 +3,11 @@ export class Articulo {
   public readonly fecha: Date;
   public readonly texto: string;
 
-  constructor(titulo: string, fecha: Date, texto: string) {
-    this.titulo = titulo;
-    this.fecha = fecha;
-    this.texto = texto;
-  }
+constructor(
+  private readonly titulo: string,
+  private fecha: Date,
+  private texto: string
+) {}
 
   public static errorTituloVacio(): string {
     throw new Error("El título no puede estar vacío.");
