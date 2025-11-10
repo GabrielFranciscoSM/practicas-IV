@@ -10,15 +10,15 @@ export class Articulo {
   }
 
   public static errorTituloVacio(): string {
-    return "El título no puede estar vacío.";
+    throw new Error("El título no puede estar vacío.");
   }
 
   public static errorTextoVacio(): string {
-    return "El texto del artículo no puede estar vacío.";
+    throw new Error("El texto del artículo no puede estar vacío.");
   }
 
   public static errorFechaPosterior(): string {
-    return "La fecha no puede ser posterior a la actual.";
+    throw new Error("La fecha no puede ser posterior a la actual.");
   }
 
 }
