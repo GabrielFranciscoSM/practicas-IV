@@ -3,11 +3,9 @@ import { Articulo } from "./Articulo";
 export class Grupo {
   public readonly articulos: Articulo[];
 
-  constructor(articulos: Articulo[]) {
-    this.articulos = articulos;
-  }
+constructor(public articulos: Articulo[]) {}
 
   public static errorGrupoVacio(): string {
-    return "El grupo debe contener al menos un artículo.";
+    throw new Error("El grupo debe contener al menos un artículo.");
   }
 }
