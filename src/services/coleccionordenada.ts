@@ -1,7 +1,6 @@
 import { Grupo } from "../model/Grupo";
 
 export class ColeccionOrdenada {
-  public readonly grupos: Grupo[];
 
   constructor(readonly grupos: Grupo[]) {}
 
