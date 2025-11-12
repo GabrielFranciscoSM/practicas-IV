@@ -1,7 +1,4 @@
 export class Articulo {
-  public readonly titulo: string;
-  public readonly fecha: Date;
-  public readonly texto: string;
 
 constructor(
   private readonly titulo: string,
