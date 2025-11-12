@@ -1,7 +1,6 @@
 import { Articulo } from "./Articulo";
 
 export class Grupo {
-  public readonly articulos: Articulo[];
 
 constructor(public articulos: Articulo[]) {}
 
