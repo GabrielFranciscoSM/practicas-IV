@@ -3,11 +3,26 @@ description: Usa esta plantilla para reportar bloqueos, dudas técnicas o dificu
 title: "[DEV PROBLEM] <Título del problema>"
 labels: ["help wanted"]
 body:
+  - type: input
+    id: historia_usuario
+    attributes:
+      label: Historia de Usuario relacionada
+      description: Indica el identificador o enlace a la HU a la que pertenece este problema. Sin una HU asociada el issue no se aceptará.
+      placeholder: "HU-03: Gestionar préstamo de libros"
+    validations:
+      required: true
   - type: textarea
     id: descripcion
     attributes:
       label: Descripción del problema
-      description: Describe el subproblema asociado a la HU que se está resolviendo. Recuerda enlazar con la Milestone conveniente.
+      description: Describe el subproblema asociado a la HU que se está resolviendo. Incluye citas textuales si aplican y enlaza la Milestone correspondiente.
       placeholder: "Cómo identificar un libro de forma única"
     validations:
       required: true
+  - type: checkboxes
+    id: validaciones
+    attributes:
+      label: Lista de comprobación
+      description: Marca todo lo que hayas verificado antes de abrir el issue.
+      options:
+        - label: He enlazado la Milestone y la HU correspondiente.
