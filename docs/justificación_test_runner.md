@@ -8,10 +8,9 @@ Este informe documenta el proceso de selección de herramientas para testing en 
 
 ## **2. REQUISITOS DE ACEPTACIÓN**
      
-*   **Velocidad**: Tiempo de ejecución para 1000 tests simples (ms)
+*   **Velocidad**: Tiempo de ejecución para tests simples (ms)
 *   **Cold Start**: Tiempo desde ejecución hasta primer test (ms)
-*   **Integración con CI/CD**: Fácil configuración en plataformas como GitHub Actions, GitLab CI, etc. 
-
+*   **Paralelización de tests**: Se pueden realizar los tests de forma paralela? (si/no)
 ---
 
 ## **3. ANÁLISIS COMPARATIVO**
@@ -39,50 +38,56 @@ Este informe documenta el proceso de selección de herramientas para testing en 
 *   **Velocidad**: Muy rápido, ya que está programado en Rust y tiene integración nativa con Bun. Ejecución paralela nativa sin overhead de transpilación.
 *   **Cold Start**:  - ~35ms [fuente](https://medium.com/@connect.hashblock/migrating-node-workloads-to-bun-performance-benchmarks-tradeoffs-a6bc04762f36).
 *   **Integración con CI/CD**: Excelente integración con GitHub Actions, GitLab CI [fuente](https://bun.com/docs/test#ci%2Fcd-integration). Cold start instantáneo reduce tiempos de pipeline en 40% vs alternativas.
+*   **Paralelización**: Por defecto es secuencial, pero se puede configurar para que sea paralelo [fuente](https://bun.com/docs/test)
 
 ##### **2. Vitest**
 *   **Velocidad**: Muy rápido gracias a Vite. HMR para tests en desarrollo.
 *   **Cold Start**: Bueno pero no óptimo para Bun. Requiere inicialización de Vite.
-*   **Integración con CI/CD**: Soporte completo para todas las plataformas CI [fuente](https://vitest.dev/guide/reporters.html#junit-reporter). Plugins avanzados para reporting y caché.
+*   **Paralelización**: Cuenta por defecto con paralelización [fuente](https://vitest.dev/guide/parallelism)
 
 ##### **3. Jest**
 *   **Velocidad**: Bastante más lento que bun test y vitest [fuente](https://dev.to/kcsujeet/your-tests-are-slow-you-need-to-migrate-to-bun-9hh). Transpilación completa antes de ejecución causa alto overhead.
 *   **Cold Start**: Lento [fuente](https://stackoverflow.com/questions/72478765/jest-takes-a-long-time-to-even-begin-to-execute-tests). JIT compilation y module loading generan cuellos de botella.
-*   **Integración con CI/CD**: Soporte universal pero con alto overhead en tiempo de ejecución. Pipeline 3x más lento que Bun.test.
+*   **Pralelización**: Cuenta con paralelización por defecto [fuente](https://jestjs.io/docs/configuration)
 
 ##### **4. Mocha**
 *   **Velocidad**: Más rápido que jest, comparable a vitest [fuente](https://www.reddit.com/r/javascript/comments/10x6rtn/use_mocha_instead_of_jest_and_boost_your_tests/).
 *   **Cold Start**: Lento .Requiere carga de múltiples módulos y plugins.
-*   **Integración con CI/CD**: Buena integración pero requiere plugins adicionales (mochawesome, nyc) para reporting moderno.
+*   **Paralelización**: En las últimas versiones permite paralelización, pero con incompatibilidades con algunas características [fuente](https://mochajs.org/next/features/parallel-mode/)
 
 ##### **5. Ava**
 *   **Velocidad**: Buen rendimiento por concurrencia nativa.
 *   **Cold Start**: Lento. Arquitectura multi-proceso genera overhead significativo en Bun.
-*   **Integración con CI/CD**: Aceptable pero limitada. Reporting básico, requiere plugins para cobertura y formateo avanzado.
+*   **Paralelización**: Automáticamente activa la paralelización de tests (para los entornos CI que soporta) [fuente](https://github.com/avajs/ava?tab=readme-ov-file#parallel-runs-in-ci)
+
 
 ### **3.3 Evaluación de Bibliotecas de Aserciones**
+
+*   **Velocidad**: Tiempo de ejecución para tests simples (ms)
+*   **Cold Start**: Tiempo desde ejecución hasta primer test (ms)
+*   **Estilo BDD**: Se sigue el estilo BDD
 
 #### **Análisis Detallado por Opción**
 
 ##### **Bun expect** 
 *   **Velocidad**: 0ms overhead por aserción (ejecución nativa). Optimizado específicamente para Bun runtime.
 *   **Cold Start**: Incluido en Bun runtime (0ms adicional). No requiere carga de módulos externos.
-*   **Integración con CI/CD**: Integración perfecta con Bun.test. Reportes estandarizados sin configuración adicional.
+*   **Estilo BDD**: Si lo usa, ya que mantiene parte del estilo de Jest
 
 ##### **Chai**
 *   **Velocidad**: Capa de abstracción que puede generar overhead por aserción compleja.
 *   **Cold Start**: Cargar librería completa. Requiere inicialización de plugins para features avanzados.
-*   **Integración con CI/CD**: Buena pero requiere configuración adicional para reporting consistente. Plugin chai-jest-snapshot necesario para snapshots.
+*   **estilo BDD**: Si, y además permite usar asserts del estilo TDD
 
 ##### **Node assert**
 *   **Velocidad**: Módulo estándar con mínimo overhead.
 *   **Cold Start**: Disponible globalmente sin carga adicional.
-*   **Integración con CI/CD**: Universal y consistente. Formato de errores estándar pero poco legible para humanos.
+*   **Estilo BDD**: Sólo cuenta con assert, no sigue el estilo (expect/should)
 
 ##### **Jest expect**
 *   **Velocidad**: Alto overhead por transpilación y capas de abstracción.
 *   **Cold Start**: Requiere inicialización de todo el ecosistema Jest.
-*   **Integración con CI/CD**: Excelente en Node.js pero inviable en Bun. Pipeline 4x más lento que Bun.expect.
+*   **Estilo BDD**: SI lo sigue
 
 ---
 
@@ -92,3 +97,5 @@ Este informe documenta el proceso de selección de herramientas para testing en 
 
 **✅ Test Runner: Bun Test (Integrado)**  
 **✅ Biblioteca de Aserciones: Bun expect (Integrado)**
+
+Se han elegido estos tests runner y biblioteca de Aserciones priorizando la Experiencia de desarrollo y sobretodo la velocidad de la ejecución de los tests. De esta manera tendremos una integración continua más rápida y menos costosa.
