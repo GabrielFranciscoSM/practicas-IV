@@ -8,7 +8,7 @@
 
 **[Verificación de configuración](doc_adicional/doc_adicional.md)**
 
-## Estructura general y planificación del proyecto
+## Historias de usuario
 
 ### Metodologías previas a las HU
 Para empatizar con el cliente/usuarios, se han seguid las metodologías *User Journey* y *Personas*, y se han generado las consiguiente documentación: [User Journey](./docs/user_journey.md), [Personas](./docs/personas.md).
@@ -22,3 +22,27 @@ Esta historia de usuario se plantea en el issue #3.
 ### Milestones y productos mínimamente viables
 
 Tras haber completado los archivos anteriores, se crean los [Productos mínimamente viables](./docs/productos_mínimamente_viables.md). 
+
+## Lenguaje y Runtime usados
+
+Para el desarrollo de este proyecto se ha elegiod usar Typescript con el runtime Bun, por motivos como:
+- Rapidez en arranque, instalación de paquetes y tareas de bundling/transpilado en muchos benchmarks.
+- Integración de gestor de dependencias y de tareas de calidad 
+- Uso de las buenas prácticas (package.json, bun.lock, tsconfig.json)
+
+Una justificación más detallada se encuentra [Aquí](/docs/Justificacion_gestores.md)
+
+## Desarrollo
+
+### Quick start
+
+1. Instala dependencias con `bun install`.
+
+### Testing
+
+1. Haz una comprovación rápida con `bun check`
+2. Ejecuta la batería de pruebas con `bun test` (incluye `Articulo`, `Coleccion`, `Grupo` y `ColeccionOrdenada`).
+
+#### Descripción de la clase que se va a testear
+
+> < Descripción >

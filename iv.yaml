@@ -1,0 +1,6 @@
+lenguaje: typescript
+entidad: src/services/coleccionordenada.ts
+test: tests/organizador.test.ts
+automatizar:
+  fichero: package.json
+  orden: bun 

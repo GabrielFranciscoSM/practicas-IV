@@ -1,0 +1,10 @@
+import { Articulo } from "./Articulo";
+
+export class Grupo {
+
+constructor(public articulos: Articulo[]) {}
+
+  public static errorGrupoVacio(): string {
+    throw new Error("El grupo debe contener al menos un artículo.");
+  }
+}
