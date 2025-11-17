@@ -1,11 +1,3 @@
-export class Articulo {
-
-constructor(
-  private readonly titulo: string,
-  private fecha: Date,
-  private texto: string
-) {}
-
 export class ArticuloTituloVacioError extends Error {
   constructor(tituloOriginal: string | undefined | null) {
     super(`El título no puede estar vacío. Valor recibido: "${tituloOriginal ?? ""}"`);
@@ -27,5 +19,14 @@ export class ArticuloFechaPosteriorError extends Error {
     this.name = "ArticuloFechaPosteriorError";
   }
 }
+
+
+export class Articulo {
+
+constructor(
+  private readonly titulo: string,
+  private fecha: Date,
+  private texto: string
+) {}
 
 }
