@@ -1,2 +1,2 @@
 lenguaje: typescript
-entidad: 
+entidad: src/services/ColeccionOrdenada.ts
