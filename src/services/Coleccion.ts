@@ -1,4 +1,4 @@
 class Coleccion {
-    private articulosAgrupados: Map<number, Set<Articulo>>;
+    private articulosAgrupados: Map<number, Map<string, Articulo>>;
     private ordenada: boolean;
 }
