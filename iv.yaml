@@ -1,6 +1,6 @@
 lenguaje: typescript
 entidad: src/services/Colección
-test: tests/Organizador.test.ts
+test: tests/organizador.test.ts
 automatizar:
   fichero: package.json
   orden: bun
