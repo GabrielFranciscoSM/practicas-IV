@@ -1,4 +1,4 @@
 class Articulo {
-    titulo: string;
-    contenido: string;
+    private readonly titulo: string;
+    private readonly contenido: string;
 }
