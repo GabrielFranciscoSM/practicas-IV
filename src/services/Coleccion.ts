@@ -1,3 +1,3 @@
 class Coleccion {
-    private articulosAgrupados: Map<number, Map<string, Articulo>>;
+    private articulosDesordenados: Map<string, Articulo>;
 }
