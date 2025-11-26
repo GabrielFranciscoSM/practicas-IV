@@ -1,3 +1,4 @@
 class Coleccion {
-    private articulos: Articulo[];
+    private articulosAgrupados: Map<number, Articulo[]>;
+    private ordenada: boolean;
 }
