@@ -1,2 +1,5 @@
 lenguaje: typescript
 entidad: src/services/Coleccion.ts
+automatizar:
+  fichero: package.json
+  orden: bun 
