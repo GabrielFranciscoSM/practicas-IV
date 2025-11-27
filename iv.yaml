@@ -1,6 +1,5 @@
 lenguaje: typescript
-entidad: src/services/agrupadorarticulos.ts
+entidad: src/services/Coleccion.ts
 automatizar:
   fichero: package.json
   orden: bun 
-  
