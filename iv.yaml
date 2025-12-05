@@ -1,5 +1,5 @@
 lenguaje: typescript
-entidad: src/services/Colección
+entidad: src/services/Coleccion
 test: tests/organizador.test.ts
 automatizar:
   fichero: package.json

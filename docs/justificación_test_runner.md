@@ -34,7 +34,7 @@ Este informe documenta el proceso de selección de herramientas para testing en 
 ##### **1. Bun Test (Integrado)**
 *   **Velocidad**: Muy rápido, ya que está programado en Rust y tiene integración nativa con Bun. Ejecución paralela nativa sin sobrecarga de transpilación [fuente](https://github.com/EvHaus/test-runner-benchmarks).
 *   **Cold Start**: ~35 ms [fuente](https://medium.com/@connect.hashblock/migrating-node-workloads-to-bun-performance-benchmarks-tradeoffs-a6bc04762f36).
-*   **Paralelización**: Por defecto es secuencial, pero se puede configurar para que sea paralelo [fuente](https://bun.com/docs/test)
+*   **Paralelización**: Paralelo entre archivos por defecto, secuencial dentro de cada archivo. Se pueden configurar los tests dentro de los archivos para que se ejecuten concurrentemente [fuente](https://bun.com/docs/test)
 
 ##### **2. Vitest**
 *   **Velocidad**: Muy rápido gracias a Vite [fuente](https://github.com/EvHaus/test-runner-benchmarks).
@@ -54,7 +54,7 @@ Este informe documenta el proceso de selección de herramientas para testing en 
 ##### **5. Ava**
 *   **Velocidad**: Buen rendimiento por concurrencia nativa [fuente](https://dev.to/kcsujeet/your-tests-are-slow-you-need-to-migrate-to-bun-9hh).
 *   **Cold Start**: Lento. Arquitectura multi-proceso genera overhead significativo en Bun.
-*   **Paralelización**: Automáticamente activa la paralelización de tests (para los entornos CI que soporta) [fuente](https://github.com/avajs/ava?tab=readme-ov-file#parallel-runs-in-ci)
+*   **Paralelización**: Automáticamente activa la paralelización de tests [fuente](https://github.com/avajs/ava?tab=readme-ov-file#parallel-runs-in-ci)
 
 
 ### **2.3 Evaluación de Bibliotecas de aserciones**
