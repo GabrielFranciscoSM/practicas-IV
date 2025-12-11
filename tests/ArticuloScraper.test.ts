@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeAll } from "bun:test";
-import { scrapeTitulo } from "../src/services/ArticuloScraper";
+import { scrapeTitulo, scrapeParagraphs } from "../src/services/ArticuloScraper";
 
 describe("scrapeTitulo - Extracción de título de un Artículo Arxiv desde el tag <h1 class='ltx_title ltx_title_document'>", () => {
 
@@ -15,7 +15,7 @@ describe("scrapeTitulo - Extracción de título de un Artículo Arxiv desde el t
             htmlCarácteresEspeciales = await Bun.file("data/test_special_chars.html").text();
         });
 
-        it("debería extraer el título completo de un artículo ArXiv válido", () => {
+        it("debería extraer el título completo de un artículo ArXiv real desde el h1.ltx_title_document", () => {
             const titulo = scrapeTitulo(htmlOriginal);
 
             expect(titulo).not.toBeNull();
@@ -59,6 +59,89 @@ describe("scrapeTitulo - Extracción de título de un Artículo Arxiv desde el t
         it("debería de lanzar un error cuando el título contine únicamente carácteres extraños", () => {
             expect(() => scrapeTitulo(htmlStrangeCharsOnly)).toThrowError("El título está vacío");
         });
+    });
+});
 
+describe("scrapeParagraphs - Extracción de párrafos de un Artículo Arxiv", () => {
+
+    describe("Dados datos HTML válidos con párrafos, debe extraer el texto limpio de cada párrafo", () => {
+
+        let htmlOriginal: string;
+        let htmlNestedHtml: string;
+        let htmlCarácteresEspeciales: string;
+
+        beforeAll(async () => {
+            htmlOriginal = await Bun.file("data/GeneralEconomics1.html").text();
+            htmlNestedHtml = await Bun.file("data/test_nested_html.html").text();
+            htmlCarácteresEspeciales = await Bun.file("data/test_special_chars.html").text();
+        });
+
+        it("debería extraer múltiples párrafos de un artículo ArXiv real como un array de strings", () => {
+            const paragraphs = scrapeParagraphs(htmlOriginal);
+
+            expect(paragraphs).toBeArray();
+            expect(paragraphs.length).toBeGreaterThan(0);
+            expect(paragraphs[0]).toContain("democracies");
+        });
+
+        it("debería eliminar tags HTML internos (links, spans, cite, math) preservando solo el texto visible", () => {
+            const paragraphs = scrapeParagraphs(htmlNestedHtml);
+
+            expect(paragraphs).toBeArray();
+            expect(paragraphs.length).toBe(3);
+
+            expect(paragraphs[0]).toContain("links");
+            expect(paragraphs[0]).toContain("bold text");
+            expect(paragraphs[0]).not.toContain("<a");
+            expect(paragraphs[0]).not.toContain("<strong");
+            expect(paragraphs[1]).not.toContain("<math");
+            expect(paragraphs[2]).toContain("footnote");
+            expect(paragraphs[2]).not.toContain("<span");
+        });
+
+        it("debería eliminar caracteres especiales Unicode (símbolos) en el texto de los párrafos", () => {
+            const paragraphs = scrapeParagraphs(htmlCarácteresEspeciales);
+
+            expect(paragraphs).toBeArray();
+            expect(paragraphs.length).toBeGreaterThan(0);
+
+            expect(paragraphs[0]).not.toContain("©");
+            expect(paragraphs[0]).not.toContain("™");
+            expect(paragraphs[0]).not.toContain("€");
+            expect(paragraphs[1]).not.toContain("²");
+        });
+
+        it("debería normalizar espacios múltiples y saltos de línea dentro de cada párrafo", () => {
+            const paragraphs = scrapeParagraphs(htmlNestedHtml);
+
+            expect(paragraphs).toBeArray();
+
+            paragraphs.forEach(p => {
+                expect(p).not.toContain("\n");
+                expect(p).not.toMatch(/\s{2,}/);
+            });
+        });
+    });
+
+    describe("Con datos HTML sin párrafos válidos, debería lanzar errores descriptivos", () => {
+        let htmlNoParagraphs: string;
+        let htmlStrangeCharsOnly: string;
+
+        beforeAll(async () => {
+            htmlNoParagraphs = await Bun.file("data/test_no_paragraphs.html").text();
+            htmlStrangeCharsOnly = await Bun.file("data/test_strange_chars_only.html").text();
+        });
+
+        it("debería lanzar un error cuando no existen párrafos", () => {
+            expect(() => scrapeParagraphs(htmlNoParagraphs)).toThrowError("No se encontraron párrafos en el artículo");
+        });
+
+        it("debería lanzar un error cuando el input es un string vacío", () => {
+            expect(() => scrapeParagraphs("")).toThrowError("No se encontraron párrafos en el artículo");
+        });
+
+        it("debería lanzar un error cuando el input es un string con solo caracteres especiales", () => {
+            expect(() => scrapeParagraphs(htmlStrangeCharsOnly)).toThrowError("No se encontraron párrafos en el artículo");
+        });
     });
 });
