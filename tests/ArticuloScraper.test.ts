@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeAll } from "bun:test";
 import { scrapeTitulo, scrapeParagraphs } from "../src/services/ArticuloScraper";
+import { Articulo } from "../src/model/Articulo";
 
 describe("scrapeTitulo - Extracción de título de un Artículo Arxiv desde el tag <h1 class='ltx_title ltx_title_document'>", () => {
 
@@ -116,7 +117,7 @@ describe("scrapeParagraphs - Extracción de párrafos de un Artículo Arxiv", ()
 
             expect(paragraphs).toBeArray();
 
-            paragraphs.forEach(p => {
+            paragraphs.forEach((p: string) => {
                 expect(p).not.toContain("\n");
                 expect(p).not.toMatch(/\s{2,}/);
             });
@@ -143,5 +144,22 @@ describe("scrapeParagraphs - Extracción de párrafos de un Artículo Arxiv", ()
         it("debería lanzar un error cuando el input es un string con solo caracteres especiales", () => {
             expect(() => scrapeParagraphs(htmlStrangeCharsOnly)).toThrowError("No se encontraron párrafos en el artículo");
         });
+    });
+});
+
+describe("Articulo - Construcción de un artículo desde HTML de ArXiv", () => {
+
+    let htmlOriginal: string;
+
+    beforeAll(async () => {
+        htmlOriginal = await Bun.file("data/GeneralEconomics1.html").text();
+    });
+
+    it("debería crear un artículo con título y contenido extraídos de un HTML real de ArXiv", () => {
+
+        const articulo = new Articulo(htmlOriginal);
+
+        expect(articulo.titulo).toBe("Polarization by Design How Elites Could Shape Mass Preferences as AI Reduces Persuasion Costs");
+        expect(articulo.contenido).toContain("democracies");
     });
 });
