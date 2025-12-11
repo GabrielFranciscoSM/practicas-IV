@@ -11,7 +11,7 @@ Este informe documenta el proceso de selección de herramientas para testing en 
 ### **2.1 Evaluación de Test Runner**
 
 *   **Velocidad**: Tiempo de ejecución para tests simples (ms)
-*   **Cold Start**: Tiempo desde ejecución hasta primer test (ms)
+*   **Cold Start**: Tiempo de ejecución desde que se manda la orden de ejecución hasta que empiece el primer test (ms)
 *   **Paralelización de tests**: ¿Se pueden ejecutar los tests de forma paralela? (sí/no)
 
 #### **Análisis Detallado por Opción**
@@ -45,7 +45,7 @@ Este informe documenta el proceso de selección de herramientas para testing en 
 ### **2.2 Evaluación de Bibliotecas de aserciones**
 
 *   **Velocidad**: Tiempo de ejecución para tests simples (ms)
-*   **Cold Start**: Tiempo desde ejecución hasta primer test (ms)
+*   **Cold Start**: Tiempo de ejecución desde que se manda la orden de ejecución hasta que empiece el primer test (ms)
 *   **Estilo BDD**: Se sigue el estilo BDD
 
 #### **Análisis Detallado por Opción**
@@ -82,7 +82,7 @@ Este informe documenta el proceso de selección de herramientas para testing en 
 *   **Está integrado en el runtime de Bun**: Si, Bun tiene una orden propia `bun test` que permite ejecutar tests.
 
 #### **Jest CLI**
-*   **Está integrado en el runtime de Bun**: No, Jest es una herramienta externa que requiere la instalación adicional. 
+*   **Está integrado en el runtime de Bun**: No, Jest es una herramienta externa en la que se basa `Bun test` pero que requiere instalación adicional. 
 
 #### **Mocha / Ava CLI**
 *   **Está integrado en el runtime de Bun**: No, Mocha y Ava son herramientas externas que requieren la instalación adicional. 
