@@ -1,4 +1,11 @@
-class Articulo {
-    private readonly titulo: string;
-    private readonly contenido: string;
+import { scrapeTitulo, scrapeParagraphs } from "../services/ArticuloScraper";
+
+export class Articulo {
+    public readonly titulo: string;
+    public readonly contenido: string;
+
+    constructor(html: string) {
+        this.titulo = scrapeTitulo(html);
+        this.contenido = scrapeParagraphs(html).join("\n\n");
+    }
 }
