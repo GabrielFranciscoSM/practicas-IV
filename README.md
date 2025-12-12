@@ -41,8 +41,14 @@ Una justificación más detallada se encuentra [Aquí](/docs/Justificacion_gesto
 ### Testing
 
 1. Haz una comprovación rápida con `bun check`
-2. Ejecuta la batería de pruebas con `bun test` (incluye `Articulo`, `Coleccion`, `Grupo` y `ColeccionOrdenada`).
+2. Ejecuta la batería de pruebas con `bun test`
+
+Se documenta la elección de test runner, biblioteca de aserciones y CLI en el archivo [justificación_test_runner.md](./docs/justificación_test_runner.md).
+
+Los tests se encuentran en el archivo [test/Articulo.test.ts](./test/Articulo.test.ts).
 
 #### Descripción de la clase que se va a testear
 
-> < Descripción >
+Se van a testear la clase Artículo, que es el objeto-valor que contiene el título y el contenido de un artículo.
+
+En esta clase se construye un artículo a partir de un html, con las funciones scrapeTitulo y scrapeParagraphs, que extraen el título y párrafos respectivamente.
