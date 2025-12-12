@@ -11,64 +11,54 @@ Este informe documenta el proceso de selección de herramientas para testing en 
 ### **2.1 Evaluación de Test Runner**
 
 *   **Velocidad**: Tiempo de ejecución para tests simples (ms)
-*   **Cold Start**: Tiempo de ejecución desde que se manda la orden de ejecución hasta que empiece el primer test (ms)
-*   **Paralelización de tests**: ¿Se pueden ejecutar los tests de forma paralela? (sí/no)
+*   **Se requiere una librería externa**
 
 #### **Análisis Detallado por Opción**
 
-##### **1. Bun Test (Integrado)**
-*   **Velocidad**: Muy rápido, ya que está programado en Rust y tiene integración nativa con Bun. Ejecución paralela nativa sin sobrecarga de transpilación [fuente](https://github.com/EvHaus/test-runner-benchmarks).
-*   **Cold Start**: ~35 ms [fuente](https://medium.com/@connect.hashblock/migrating-node-workloads-to-bun-performance-benchmarks-tradeoffs-a6bc04762f36).
-*   **Paralelización**: Paralelo entre archivos por defecto, secuencial dentro de cada archivo. Se pueden configurar los tests dentro de los archivos para que se ejecuten concurrentemente [fuente](https://bun.com/docs/test)
+##### **1. bun:test**
+*   **Velocidad**: Muy rápido ya que está escrito en Zig, un lenguaje de bajo nivel compilado [fuente](https://github.com/EvHaus/test-runner-benchmarks).
+*   **Se requiere una librería externa**: No, ya viene integrado en el runtime de Bun.
 
 ##### **2. Vitest**
 *   **Velocidad**: Muy rápido gracias a Vite [fuente](https://github.com/EvHaus/test-runner-benchmarks).
-*   **Cold Start**: Bueno, pero no óptimo para Bun; requiere la inicialización de Vite.
-*   **Paralelización**: Cuenta por defecto con paralelización [fuente](https://vitest.dev/guide/parallelism)
+*   **Se requiere una librería externa**: Sí, requiere la instalación de la librería `vitest`.
 
 ##### **3. Jest**
 *   **Velocidad**: Bastante más lento que Bun Test y Vitest [fuente](https://dev.to/kcsujeet/your-tests-are-slow-you-need-to-migrate-to-bun-9hh). La transpilación completa antes de la ejecución provoca una sobrecarga alta.
-*   **Cold Start**: Lento [fuente](https://stackoverflow.com/questions/72478765/jest-takes-a-long-time-to-even-begin-to-execute-tests). La compilación JIT y la carga de módulos generan cuellos de botella.
-*   **Paralelización**: Cuenta con paralelización por defecto [fuente](https://jestjs.io/docs/configuration)
+*   **Se requiere una librería externa**: Sí, requiere la instalación de la librería `jest`.
 
 ##### **4. Mocha**
 *   **Velocidad**: Más rápido que Jest, comparable a Vitest [fuente](https://www.reddit.com/r/javascript/comments/10x6rtn/use_mocha_instead_of_jest_and_boost_your_tests/).
-*   **Cold Start**: Lento. Requiere la carga de múltiples módulos y complementos.
-*   **Paralelización**: En las últimas versiones permite paralelización, pero con incompatibilidades con algunas características [fuente](https://mochajs.org/next/features/parallel-mode/)
+*   **Se requiere una librería externa**: Sí, requiere la instalación de la librería `mocha`.
 
 ##### **5. Ava**
 *   **Velocidad**: Buen rendimiento por concurrencia nativa [fuente](https://dev.to/kcsujeet/your-tests-are-slow-you-need-to-migrate-to-bun-9hh).
-*   **Cold Start**: Lento. Arquitectura multi-proceso genera overhead significativo en Bun.
-*   **Paralelización**: Automáticamente activa la paralelización de tests [fuente](https://github.com/avajs/ava?tab=readme-ov-file#parallel-runs-in-ci)
+*   **Se requiere una librería externa**: Sí, requiere la instalación de la librería `ava`.
 
+---
 
 ### **2.2 Evaluación de Bibliotecas de aserciones**
 
-*   **Velocidad**: Tiempo de ejecución para tests simples (ms)
-*   **Cold Start**: Tiempo de ejecución desde que se manda la orden de ejecución hasta que empiece el primer test (ms)
-*   **Estilo BDD**: Se sigue el estilo BDD
+*   **Estilo BDD**: Se sigue el estilo BDD que se asemeja más al lenguaje natural `expect(x).to.be.true` y no TDD `assert(x)`
+*   **Se requiere una librería externa**
 
 #### **Análisis Detallado por Opción**
 
-##### **Bun expect**
-*   **Velocidad**: 0 ms de sobrecarga por aserción (ejecución nativa). Optimizado específicamente para el entorno de ejecución de Bun[fuente](https://bun.com/docs/test/writing-tests).
-*   **Cold Start**: Incluido en el runtime de Bun (0 ms adicional). No requiere carga de módulos externos[fuente](https://bun.com/docs/test/writing-tests).
-*   **Estilo BDD**: Sí: mantiene parte del estilo de Jest[fuente](https://bun.com/docs/test/writing-tests).
+##### **bun:test**
+*   **Estilo BDD**: Sí: mantiene parte del estilo de Jest usando `expect` [fuente](https://bun.com/docs/test/writing-tests).
+*   **Se requiere una librería externa**: No, ya viene integrado en el runtime de Bun.
 
 ##### **Chai**
-*   **Velocidad**: Capa de abstracción que puede generar sobrecarga en aserciones complejas[fuente](https://www.chaijs.com/guide/installation/).
-*   **Cold Start**: Carga la librería completa[fuente](https://www.chaijs.com/guide/installation/). Requiere la inicialización de complementos para funcionalidades avanzadas[fuente](https://www.chaijs.com/guide/using-chai-with-esm-and-plugins/#importing-chai).
-*   **Estilo BDD**: Sí, y además permite usar aserciones del estilo TDD. [fuente](https://www.chaijs.com/guide/styles/#expect)
+*   **Estilo BDD**: Sí, y además permite usar aserciones del estilo TDD. Es decir, puede usar `expect`/`should` y `assert` [fuente](https://www.chaijs.com/guide/styles/#expect)
+*   **Se requiere una librería externa**: Sí, requiere la instalación de la librería `chai`.
 
-##### **Node assert**
-*   **Velocidad**: Módulo estándar con una sobrecarga mínima[fuente](https://nodejs.org/api/assert.html).
-*   **Cold Start**: Disponible sin carga adicional en Node.js[fuente](https://nodejs.org/api/assert.html).
-*   **Estilo BDD**: Solo cuenta con `assert`; no sigue el estilo `expect`/`should`.
+##### **assert**
+*   **Estilo BDD**: No, solo cuenta con `assert`; no sigue el estilo `expect`.
+*   **Se requiere una librería externa**: No, ya viene integrado en el runtime de Bun.
 
-##### **Jest expect**
-*   **Velocidad**: Alta sobrecarga por transpilación y capas de abstracción.[fuente](https://jestjs.io/docs/getting-started)
-*   **Cold Start**: Requiere inicialización de todo el ecosistema Jest. [fuente](https://jestjs.io/docs/getting-started)
-*   **Estilo BDD**: Sí, lo sigue. [fuente](https://jestjs.io/docs/expect)
+##### **Jest**
+*   **Estilo BDD**: Sí, usa el estilo `expect` [fuente](https://jestjs.io/docs/expect)
+*   **Se requiere una librería externa**: Sí, requiere la instalación de la librería `jest`.
 
 ---
 
@@ -86,6 +76,7 @@ Este informe documenta el proceso de selección de herramientas para testing en 
 
 #### **Mocha / Ava CLI**
 *   **Está integrado en el runtime de Bun**: No, Mocha y Ava son herramientas externas que requieren la instalación adicional. 
+
 ---
 
 ## **4. CONCLUSIÓN FINAL**
