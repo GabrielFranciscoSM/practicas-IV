@@ -83,8 +83,8 @@ Este informe documenta el proceso de selección de herramientas para testing en 
 
 ### **4.1 Elección Principal**
 
-**✅ Test Runner: Bun Test (integrado)**  
-**✅ Biblioteca de aserciones: Bun expect (integrado)**
+**✅ Test Runner: Bun:test (integrado)**  
+**✅ Biblioteca de aserciones: Bun:test (integrado)**
 **✅ CLI: `bun test` (integrado)**
 
 Se ha elegido este test runner, la biblioteca de aserciones y la CLI priorizando la experiencia de desarrollo y, sobre todo, la velocidad de ejecución de los tests. De esta forma contaremos con una integración continua más rápida y menos costosa.
