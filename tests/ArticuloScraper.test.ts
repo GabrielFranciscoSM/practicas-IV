@@ -106,10 +106,18 @@ describe("scrapeParagraphs - Extracción de párrafos de un Artículo Arxiv", ()
             expect(paragraphs).toBeArray();
             expect(paragraphs.length).toBeGreaterThan(0);
 
-            expect(paragraphs[0]).not.toContain("©");
-            expect(paragraphs[0]).not.toContain("™");
-            expect(paragraphs[0]).not.toContain("€");
-            expect(paragraphs[1]).not.toContain("²");
+            expect(paragraphs[0]).not.toContain("≥");
+            expect(paragraphs[0]).not.toContain("∈");
+            expect(paragraphs[0]).not.toContain("=");
+            expect(paragraphs[0]).not.toContain("+");
+            expect(paragraphs[0]).not.toContain("-");
+            expect(paragraphs[0]).not.toContain(":");
+            expect(paragraphs[0]).not.toContain(")");
+            expect(paragraphs[0]).not.toContain("[");
+            expect(paragraphs[0]).not.toContain(",");
+            expect(paragraphs[0]).not.toContain("!");
+            expect(paragraphs[0]).not.toContain("'");
+            expect(paragraphs[0]).not.toContain("\"");
         });
 
         it("debería normalizar espacios múltiples y saltos de línea dentro de cada párrafo", () => {
