@@ -66,7 +66,9 @@ export function scrapeParagraphs(html: string): string[] {
 function cleanText(text: string): string {
     let cleaned = text.replace(/<[^>]*>/g, " ");
 
-    cleaned = cleaned.replace(/[^a-zA-ZáéíóúüñÁÉÍÓÚÜÑ0-9\s]/g, " ");
+    cleaned = cleaned.replace(/[\p{P}]/gu, " ");
+
+    cleaned = cleaned.replace(/[\p{Sm}]/gu, " ");
 
     cleaned = cleaned.replace(/\s+/g, " ");
 
