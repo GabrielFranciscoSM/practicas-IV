@@ -20,6 +20,8 @@ WORKDIR /app
 COPY --from=builder /home/testuser/app/node_modules ./node_modules
 COPY --from=builder /home/testuser/app/package.json ./package.json
 
+ENV BUN_RUNTIME_TRANSPILER_CACHE_PATH=0
+
 WORKDIR /app/test
 
 ENTRYPOINT ["bun", "test"]

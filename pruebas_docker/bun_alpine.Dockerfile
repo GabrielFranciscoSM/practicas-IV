@@ -20,6 +20,8 @@ WORKDIR /app
 COPY --from=builder --chown=1001:1001 /home/testuser/app/node_modules ./node_modules
 COPY --from=builder --chown=1001:1001 /home/testuser/app/package.json ./
 
+ENV BUN_RUNTIME_TRANSPILER_CACHE_PATH=0
+
 USER 1001
 WORKDIR /app/test
 
