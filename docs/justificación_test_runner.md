@@ -41,7 +41,7 @@ Este informe documenta el proceso de selección de herramientas para testing en 
 #### **Análisis Detallado por Opción**
 
 ##### **bun describe/it**
-*   **Velocidad**: Muy rápido ya que está escrito en Zig, un lenguaje de bajo nivel compilado [fuente](https://github.com/EvHaus/test-runner-benchmarks).
+*   **Velocidad**: Muy rápido [fuente](https://github.com/EvHaus/test-runner-benchmarks).
 *   **Se requiere una librería externa**: No, ya viene integrado en el runtime de Bun.
 *   **Estilo BDD**: Sí, usando `describe` e `it` [fuente](https://bun.com/docs/test/writing-tests).
 
