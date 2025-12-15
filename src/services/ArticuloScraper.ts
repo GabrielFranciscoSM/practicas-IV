@@ -64,15 +64,11 @@ export function scrapeParagraphs(html: string): string[] {
 }
 
 function removeBadCharacters(text: string): string {
-    let cleaned = text.replace(/<[^>]*>/g, " ");
 
-    cleaned = cleaned.replace(/[\p{P}]/gu, " ");
-
-    cleaned = cleaned.replace(/[\p{Sm}]/gu, " ");
-
-    cleaned = cleaned.replace(/\s+/g, " ");
-
-    cleaned = cleaned.trim();
+    const cleaned = text
+        .replace(/<[^>]*>|[\p{P}\p{Sm}]/gu, " ")
+        .replace(/\s+/g, " ")
+        .trim();
 
     return cleaned;
 }
