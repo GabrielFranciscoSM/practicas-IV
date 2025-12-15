@@ -8,7 +8,32 @@ Este informe documenta el proceso de selección de herramientas para testing en 
 
 ## **2. ANÁLISIS COMPARATIVO**
 
-### **2.1 Evaluación de Test Runner**
+### **2.1 Evaluación de Bibliotecas de aserciones**
+
+*   **Estilo BDD**: Se sigue el estilo BDD que se asemeja más al lenguaje natural `expect(x).to.be.true` y no TDD `assert(x)`
+*   **Se requiere una librería externa**
+
+#### **Análisis Detallado por Opción**
+
+##### **bun:test**
+*   **Estilo BDD**: Sí: mantiene parte del estilo de Jest usando `expect` [fuente](https://bun.com/docs/test/writing-tests).
+*   **Se requiere una librería externa**: No, ya viene integrado en el runtime de Bun.
+
+##### **Chai**
+*   **Estilo BDD**: Sí, y además permite usar aserciones del estilo TDD. Es decir, puede usar `expect`/`should` y `assert` [fuente](https://www.chaijs.com/guide/styles/#expect)
+*   **Se requiere una librería externa**: Sí, requiere la instalación de la librería `chai`.
+
+##### **assert**
+*   **Estilo BDD**: No, solo cuenta con `assert`; no sigue el estilo `expect`.
+*   **Se requiere una librería externa**: No, ya viene integrado en el runtime de Bun.
+
+##### **Jest**
+*   **Estilo BDD**: Sí, usa el estilo `expect` [fuente](https://jestjs.io/docs/expect)
+*   **Se requiere una librería externa**: Sí, requiere la instalación de la librería `jest`.
+
+---
+
+### **2.2 Evaluación de Test Runner**
 
 *   **Velocidad**: Tiempo de ejecución para tests simples (ms)
 *   **Se requiere una librería externa**
@@ -34,31 +59,6 @@ Este informe documenta el proceso de selección de herramientas para testing en 
 ##### **5. Ava**
 *   **Velocidad**: Buen rendimiento por concurrencia nativa [fuente](https://dev.to/kcsujeet/your-tests-are-slow-you-need-to-migrate-to-bun-9hh).
 *   **Se requiere una librería externa**: Sí, requiere la instalación de la librería `ava`.
-
----
-
-### **2.2 Evaluación de Bibliotecas de aserciones**
-
-*   **Estilo BDD**: Se sigue el estilo BDD que se asemeja más al lenguaje natural `expect(x).to.be.true` y no TDD `assert(x)`
-*   **Se requiere una librería externa**
-
-#### **Análisis Detallado por Opción**
-
-##### **bun:test**
-*   **Estilo BDD**: Sí: mantiene parte del estilo de Jest usando `expect` [fuente](https://bun.com/docs/test/writing-tests).
-*   **Se requiere una librería externa**: No, ya viene integrado en el runtime de Bun.
-
-##### **Chai**
-*   **Estilo BDD**: Sí, y además permite usar aserciones del estilo TDD. Es decir, puede usar `expect`/`should` y `assert` [fuente](https://www.chaijs.com/guide/styles/#expect)
-*   **Se requiere una librería externa**: Sí, requiere la instalación de la librería `chai`.
-
-##### **assert**
-*   **Estilo BDD**: No, solo cuenta con `assert`; no sigue el estilo `expect`.
-*   **Se requiere una librería externa**: No, ya viene integrado en el runtime de Bun.
-
-##### **Jest**
-*   **Estilo BDD**: Sí, usa el estilo `expect` [fuente](https://jestjs.io/docs/expect)
-*   **Se requiere una librería externa**: Sí, requiere la instalación de la librería `jest`.
 
 ---
 
