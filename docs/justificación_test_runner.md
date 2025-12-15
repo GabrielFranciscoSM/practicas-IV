@@ -37,28 +37,33 @@ Este informe documenta el proceso de selección de herramientas para testing en 
 
 *   **Velocidad**: Tiempo de ejecución para tests simples (ms)
 *   **Se requiere una librería externa**
-
+*   **Estilo BDD**: Se usa declaración de tests jerárquicos y agrupados, de tal manera que sea más lejible. 
 #### **Análisis Detallado por Opción**
 
-##### **1. bun:test**
+##### **bun describe/it**
 *   **Velocidad**: Muy rápido ya que está escrito en Zig, un lenguaje de bajo nivel compilado [fuente](https://github.com/EvHaus/test-runner-benchmarks).
 *   **Se requiere una librería externa**: No, ya viene integrado en el runtime de Bun.
+*   **Estilo BDD**: Sí, usando `describe` e `it` [fuente](https://bun.com/docs/test/writing-tests).
 
-##### **2. Vitest**
+##### **vitest describe/it**
 *   **Velocidad**: Muy rápido gracias a Vite [fuente](https://github.com/EvHaus/test-runner-benchmarks).
 *   **Se requiere una librería externa**: Sí, requiere la instalación de la librería `vitest`.
+*   **Estilo BDD**: Sí, usando `describe` e `it` [fuente](https://vitest.dev/api/).
 
-##### **3. Jest**
+##### **jest describe/it**
 *   **Velocidad**: Bastante más lento que Bun Test y Vitest [fuente](https://dev.to/kcsujeet/your-tests-are-slow-you-need-to-migrate-to-bun-9hh). La transpilación completa antes de la ejecución provoca una sobrecarga alta.
 *   **Se requiere una librería externa**: Sí, requiere la instalación de la librería `jest`.
+*   **Estilo BDD**: Sí, usando `describe` e `it` [fuente](https://jestjs.io/docs/api).
 
-##### **4. Mocha**
+##### **mocha describe/it**
 *   **Velocidad**: Más rápido que Jest, comparable a Vitest [fuente](https://www.reddit.com/r/javascript/comments/10x6rtn/use_mocha_instead_of_jest_and_boost_your_tests/).
 *   **Se requiere una librería externa**: Sí, requiere la instalación de la librería `mocha`.
+*   **Estilo BDD**: Sí, usando `describe` e `it` [fuente](https://mochajs.org/#interfaces).
 
-##### **5. Ava**
+##### **ava test**
 *   **Velocidad**: Buen rendimiento por concurrencia nativa [fuente](https://dev.to/kcsujeet/your-tests-are-slow-you-need-to-migrate-to-bun-9hh).
 *   **Se requiere una librería externa**: Sí, requiere la instalación de la librería `ava`.
+*   **Estilo BDD**: No, ya que su naturaleza paralela requiere que los tests sean completamente independientes, y agrupar tests promueve el usar variables compartidas [fuente](https://github.com/avajs/ava/blob/main/docs/01-writing-tests.md).
 
 ---
 
