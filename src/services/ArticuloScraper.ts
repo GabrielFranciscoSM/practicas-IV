@@ -28,7 +28,7 @@ export function scrapeTitulo(html: string): string {
     }
 
     const rawTitle = match[1] ?? "";
-    const cleanedTitle = cleanText(rawTitle);
+    const cleanedTitle = removeBadCharacters(rawTitle);
 
     if (!cleanedTitle) {
         throw new TituloVacioError();
@@ -49,7 +49,7 @@ export function scrapeParagraphs(html: string): string[] {
 
     for (const match of matches) {
         const rawParagraph = match[1] ?? "";
-        const cleanedParagraph = cleanText(rawParagraph);
+        const cleanedParagraph = removeBadCharacters(rawParagraph);
 
         if (cleanedParagraph) {
             paragraphs.push(cleanedParagraph);
@@ -63,7 +63,7 @@ export function scrapeParagraphs(html: string): string[] {
     return paragraphs;
 }
 
-function cleanText(text: string): string {
+function removeBadCharacters(text: string): string {
     let cleaned = text.replace(/<[^>]*>/g, " ");
 
     cleaned = cleaned.replace(/[\p{P}]/gu, " ");
