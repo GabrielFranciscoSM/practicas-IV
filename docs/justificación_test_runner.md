@@ -23,8 +23,8 @@ Este informe documenta el proceso de selección de herramientas para testing en 
 *   **Estilo BDD**: Sí, y además permite usar aserciones del estilo TDD. Es decir, puede usar `expect`/`should` y `assert` [fuente](https://www.chaijs.com/guide/styles/#expect)
 *   **Se requiere una librería externa**: Sí, requiere la instalación de la librería `chai`.
 
-##### **assert**
-*   **Estilo BDD**: No, solo cuenta con `assert`; no sigue el estilo `expect`.
+##### **node:assert**
+*   **Estilo BDD**: No, solo cuenta con `assert`; no sigue el estilo `expect`. [fuente](https://bun.com/reference/node/assert)
 *   **Se requiere una librería externa**: No, ya viene integrado en el runtime de Bun.
 
 ##### **Jest**
