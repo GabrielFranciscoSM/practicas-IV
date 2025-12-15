@@ -171,3 +171,39 @@ describe("Articulo - Construcción de un artículo desde HTML de ArXiv", () => {
         expect(articulo.contenido).toContain("democracies");
     });
 });
+
+describe("Colección - Construcción de una colección de artículos desde HTML de ArXiv", () => {
+
+    let htmlOriginal: string;
+    let htmlOriginal2: string;
+
+    beforeAll(async () => {
+        htmlOriginal = await Bun.file("data/GeneralEconomics1.html").text();
+        htmlOriginal2 = await Bun.file("data/electrones.html").text();
+    });
+
+    it("debería de poder crear una colección con un artículo", () => {
+        const articulo = new Articulo(htmlOriginal);
+        const coleccion = new Coleccion(articulo);
+
+        expect(coleccion.articulos.size).toBe(1);
+    });
+
+    it("debería de poder crear una colección con varios artículos", () => {
+        const articulo1 = new Articulo(htmlOriginal);
+        const articulo2 = new Articulo(htmlOriginal2);
+        const coleccion = new Coleccion(articulo1);
+        coleccion.agregarArticulo(articulo2);
+
+        expect(coleccion.articulos.size).toBe(2);
+    });
+
+    it("no debería de permitir insertar dos artículos con el mismo título", () => {
+        const articulo1 = new Articulo(htmlOriginal);
+        const articulo2 = new Articulo(htmlOriginal);
+        const coleccion = new Coleccion(articulo1);
+        coleccion.agregarArticulo(articulo2);
+
+        expect(() => coleccion.agregarArticulo(articulo2)).toThrowError("El artículo ya existe en la colección");
+    });
+})
