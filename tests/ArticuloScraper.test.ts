@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeAll } from "bun:test";
 import { scrapeTitulo, scrapeParagraphs } from "../src/services/ArticuloScraper";
 import { Articulo } from "../src/model/Articulo";
+import { Coleccion } from "../src/services/Coleccion";
 
 describe("scrapeTitulo - Extracción de título de un Artículo Arxiv desde el tag <h1 class='ltx_title ltx_title_document'>", () => {
 
@@ -202,7 +203,6 @@ describe("Colección - Construcción de una colección de artículos desde HTML 
         const articulo1 = new Articulo(htmlOriginal);
         const articulo2 = new Articulo(htmlOriginal);
         const coleccion = new Coleccion(articulo1);
-        coleccion.agregarArticulo(articulo2);
 
         expect(() => coleccion.agregarArticulo(articulo2)).toThrowError("El artículo ya existe en la colección");
     });
