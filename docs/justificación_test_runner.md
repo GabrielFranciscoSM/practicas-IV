@@ -2,7 +2,7 @@
 
 ## **1. INTRODUCCIÓN**
 
-Este informe documenta el proceso de selección de herramientas para testing en un proyecto desarrollado con **Bun** y **TypeScript**. El objetivo es identificar la combinación óptima de test runner y biblioteca de aserciones que cumpla con los requisitos de rendimiento, compatibilidad y mantenibilidad, siguiendo una metodología estructurada basada en principios **FIRST** (Fast, Isolated, Repeatable, Self-validating, Timely) y criterios adicionales de integración continua y compatibilidad con el ecosistema Bun.
+Este informe documenta el proceso de selección de herramientas para testing en un proyecto desarrollado con **Bun** y **TypeScript**. El objetivo es identificar la combinación óptima de test runner, biblioteca de aserciones y herramienta CLI.
      
 ---
 
@@ -92,6 +92,6 @@ Este informe documenta el proceso de selección de herramientas para testing en 
 **✅ Biblioteca de aserciones: Bun:test (integrado)**
 **✅ CLI: `bun test` (integrado)**
 
-Se ha elegido este test runner, la biblioteca de aserciones y la CLI priorizando la experiencia de desarrollo y, sobre todo, la velocidad de ejecución de los tests. De esta forma contaremos con una integración continua más rápida y menos costosa.
+Se ha elegido este test runner, la biblioteca de aserciones y la CLI priorizando la experiencia de desarrollo y, sobre todo, la inegración de las herramientas en el runtime de Bun. De esta forma contaremos con una integración continua más rápida y menos costosa.
 
 ***
