@@ -1,3 +1,6 @@
+const TITLE_REGEX = /<h1[^>]*class=["'][^"']*ltx_title[^"']*ltx_title_document[^"']*["'][^>]*>([\s\S]*?)<\/h1>/i;
+const PARAGRAPH_REGEX = /<p[^>]*class=["'][^"']*ltx_p[^"']*["'][^>]*>([\s\S]*?)<\/p>/gi;
+
 class TituloNoEncontradoError extends Error {
     constructor() {
         super("No se encontró el título del artículo");
@@ -20,8 +23,7 @@ class ParrafosNoEncontradosError extends Error {
 }
 
 export function scrapeTitulo(html: string): string {
-    const titleRegex = /<h1[^>]*class=["'][^"']*ltx_title[^"']*ltx_title_document[^"']*["'][^>]*>([\s\S]*?)<\/h1>/i;
-    const match = html.match(titleRegex);
+    const match = html.match(TITLE_REGEX);
 
     if (!match) {
         throw new TituloNoEncontradoError();
@@ -38,8 +40,8 @@ export function scrapeTitulo(html: string): string {
 }
 
 export function scrapeParagraphs(html: string): string[] {
-    const paragraphRegex = /<p[^>]*class=["'][^"']*ltx_p[^"']*["'][^>]*>([\s\S]*?)<\/p>/gi;
-    const matches = [...html.matchAll(paragraphRegex)];
+    PARAGRAPH_REGEX.lastIndex = 0;
+    const matches = [...html.matchAll(PARAGRAPH_REGEX)];
 
     if (matches.length === 0) {
         throw new ParrafosNoEncontradosError();
