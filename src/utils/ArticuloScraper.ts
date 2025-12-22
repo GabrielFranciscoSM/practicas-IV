@@ -1,3 +1,5 @@
+import { Articulo } from "../model/Articulo";
+
 const TITLE_REGEX = /<h1[^>]*class=["'][^"']*ltx_title[^"']*ltx_title_document[^"']*["'][^>]*>([\s\S]*?)<\/h1>/i;
 const PARAGRAPH_REGEX = /<p[^>]*class=["'][^"']*ltx_p[^"']*["'][^>]*>([\s\S]*?)<\/p>/gi;
 
@@ -73,4 +75,10 @@ function removeBadCharacters(text: string): string {
         .trim();
 
     return cleaned;
+}
+
+export function scrapeArticulo(html: string): Articulo {
+    const titulo = scrapeTitulo(html);
+    const contenido = scrapeParagraphs(html).join("\n\n");
+    return new Articulo(titulo, contenido);
 }

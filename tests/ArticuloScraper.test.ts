@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeAll } from "bun:test";
-import { scrapeTitulo, scrapeParagraphs } from "../src/utils/ArticuloScraper";
+import { scrapeTitulo, scrapeParagraphs, scrapeArticulo } from "../src/utils/ArticuloScraper";
 import { Articulo } from "../src/model/Articulo";
 import { Coleccion } from "../src/services/Coleccion";
 
@@ -156,20 +156,51 @@ describe("scrapeParagraphs - Extracción de párrafos de un Artículo Arxiv", ()
     });
 });
 
-describe("Articulo - Construcción de un artículo desde HTML de ArXiv", () => {
+describe("Articulo", () => {
 
-    let htmlOriginal: string;
+    describe("Construcción desde HTML de ArXiv", () => {
+        let htmlOriginal: string;
 
-    beforeAll(async () => {
-        htmlOriginal = await Bun.file("data/GeneralEconomics1.html").text();
+        beforeAll(async () => {
+            htmlOriginal = await Bun.file("data/GeneralEconomics1.html").text();
+        });
+
+        it("debería crear un artículo con título y contenido extraídos de un HTML real de ArXiv", () => {
+
+            const articulo = scrapeArticulo(htmlOriginal);
+
+            expect(articulo.titulo).toBe("Polarization by Design How Elites Could Shape Mass Preferences as AI Reduces Persuasion Costs");
+            expect(articulo.contenido).toContain("democracies");
+        });
     });
 
-    it("debería crear un artículo con título y contenido extraídos de un HTML real de ArXiv", () => {
+    describe("Validación del modelo", () => {
 
-        const articulo = new Articulo(htmlOriginal);
+        it("debería lanzar error cuando el título está vacío", () => {
+            expect(() => new Articulo("", "contenido válido"))
+                .toThrowError("El título está vacío");
+        });
 
-        expect(articulo.titulo).toBe("Polarization by Design How Elites Could Shape Mass Preferences as AI Reduces Persuasion Costs");
-        expect(articulo.contenido).toContain("democracies");
+        it("debería lanzar error cuando el título solo tiene espacios", () => {
+            expect(() => new Articulo("   ", "contenido válido"))
+                .toThrowError("El título está vacío");
+        });
+
+        it("debería lanzar error cuando el contenido está vacío", () => {
+            expect(() => new Articulo("título válido", ""))
+                .toThrowError("El contenido está vacío");
+        });
+
+        it("debería lanzar error cuando el contenido solo tiene espacios", () => {
+            expect(() => new Articulo("título válido", "   "))
+                .toThrowError("El contenido está vacío");
+        });
+
+        it("debería crear un artículo válido con título y contenido", () => {
+            const articulo = new Articulo("Mi título", "Mi contenido");
+            expect(articulo.titulo).toBe("Mi título");
+            expect(articulo.contenido).toBe("Mi contenido");
+        });
     });
 });
 
@@ -184,15 +215,15 @@ describe("Colección - Construcción de una colección de artículos desde HTML 
     });
 
     it("debería de poder crear una colección con un artículo", () => {
-        const articulo = new Articulo(htmlOriginal);
+        const articulo = scrapeArticulo(htmlOriginal);
         const coleccion = new Coleccion(articulo);
 
         expect(coleccion.articulos.size).toBe(1);
     });
 
     it("debería de poder crear una colección con varios artículos", () => {
-        const articulo1 = new Articulo(htmlOriginal);
-        const articulo2 = new Articulo(htmlOriginal2);
+        const articulo1 = scrapeArticulo(htmlOriginal);
+        const articulo2 = scrapeArticulo(htmlOriginal2);
         const coleccion = new Coleccion(articulo1);
         coleccion.agregarArticulo(articulo2);
 
@@ -200,10 +231,10 @@ describe("Colección - Construcción de una colección de artículos desde HTML 
     });
 
     it("no debería de permitir insertar dos artículos con el mismo título", () => {
-        const articulo1 = new Articulo(htmlOriginal);
-        const articulo2 = new Articulo(htmlOriginal);
+        const articulo1 = scrapeArticulo(htmlOriginal);
+        const articulo2 = scrapeArticulo(htmlOriginal);
         const coleccion = new Coleccion(articulo1);
 
         expect(() => coleccion.agregarArticulo(articulo2)).toThrowError("El artículo ya existe en la colección");
     });
-})
+});
