@@ -32,17 +32,23 @@ Para el desarrollo de este proyecto se ha elegiod usar Typescript con el runtime
 
 Una justificación más detallada se encuentra [Aquí](/docs/Justificacion_gestores.md)
 
-## Quick start
-
-Guía rápida para empezar a usar el proyecto
-
-1. Ejecuta ```Bun install``` para instalar los módulos de [package.json](/package.json)
-
 ## Desarrollo
 
-### Comprobación de sintaxis 
+### Quick start
 
-Se usará la orden check, ```Bun check```,  para comprobar la sintaxis de los archivos .ts
+1. Instala dependencias con `bun install`.
 
-Se usará la orden lint, ```Bun lint```,  para comprobar la sintaxis de los archivos .ts
+### Testing
 
+1. Haz una comprovación rápida con `bun check`
+2. Ejecuta la batería de pruebas con `bun test`
+
+Se documenta la elección de test runner, biblioteca de aserciones y CLI en el archivo [justificación_test_runner.md](./docs/justificación_test_runner.md).
+
+Los tests se encuentran en el archivo [test/Articulo.test.ts](./test/Articulo.test.ts).
+
+#### Descripción de la clase que se va a testear
+
+Se van a testear la clase Artículo, que es el objeto-valor que contiene el título y el contenido de un artículo.
+
+En esta clase se construye un artículo a partir de un html, con las funciones scrapeTitulo y scrapeParagraphs, que extraen el título y párrafos respectivamente.

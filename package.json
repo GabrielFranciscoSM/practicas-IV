@@ -3,7 +3,7 @@
   "version": "0.3.1",
   "description": "A clustered documentation generator",
   "scripts": {
-    "check": "bun tsc --noEmit"
+    "check": "bunx tsc --noEmit"
   },
   "author": "Gabriel Sánchez",
   "license": "MIT",
