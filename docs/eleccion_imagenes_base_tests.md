@@ -15,6 +15,7 @@ Una vez seleccionadas las imágenes base se evaluaran en la ejecución de los te
 1. Velocidad    -> Tiempo de ejecución de los tests
 2. Tamaño       -> Tamaño de la imagen final
 3. Seguridad    -> Número de vulnerabilidades conocidas
+4. Oficialidad  -> Imagen oficial de la comunidad 
 
 ## **3. Imágenes base consideradas**
 
@@ -107,4 +108,4 @@ Basándose en los tres criterios establecidos:
 
 ### Elección final
 
-**`alpine_upx`** es la mejor opción para un contenedor de tests porque es la que menor tamaño tiene (85.3 MB), es la que menor tiempo de ejecución tiene (~17ms) y es la que menor vulnerabilidades tiene (0). Aunque comparte podio con otras imágenes, es la única en el podio para todos los criterios.
+Elijo **alpine** como la mejor opción ya que es la más segura y oficialmente mantenida. Esto asegura que la imagen sea estable y segura.
