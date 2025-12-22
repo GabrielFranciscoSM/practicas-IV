@@ -4,7 +4,7 @@
 
 Primero debemos de buscar imágenes base sobre las que construir el contenedor de tests. Para ello usaremos el siguiente criterio:
 
-1. Imágenes actualizadas recientemente
+1. Imágenes actualizadas en el último mes
 
 Además, buscaremos imágenes de diferentes tipos (oficiales de bun, de alpine, de debian, etc.) para tener una variedad de opciones.
 
