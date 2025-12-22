@@ -1,4 +1,4 @@
-import { scrapeTitulo, scrapeParagraphs } from "../services/ArticuloScraper";
+import { scrapeTitulo, scrapeParagraphs } from "../utils/ArticuloScraper";
 
 export class Articulo {
     public readonly titulo: string;

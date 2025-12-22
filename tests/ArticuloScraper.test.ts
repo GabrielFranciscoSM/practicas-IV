@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeAll } from "bun:test";
-import { scrapeTitulo, scrapeParagraphs } from "../src/services/ArticuloScraper";
+import { scrapeTitulo, scrapeParagraphs } from "../src/utils/ArticuloScraper";
 import { Articulo } from "../src/model/Articulo";
 import { Coleccion } from "../src/services/Coleccion";
 
