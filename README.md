@@ -52,3 +52,22 @@ Los tests se encuentran en el archivo [test/Articulo.test.ts](./test/Articulo.te
 Se van a testear la clase Artículo, que es el objeto-valor que contiene el título y el contenido de un artículo.
 
 En esta clase se construye un artículo a partir de un html, con las funciones scrapeTitulo y scrapeParagraphs, que extraen el título y párrafos respectivamente.
+
+## Docker
+
+### Ejecución de tests con Docker
+
+Para ejecutar los tests usando el contenedor de Docker Hub:
+
+```bash
+docker run -u 1001 -t -v `pwd`:/app/test gabrielfranciscosm/practicas-iv
+```
+
+### Imagen base
+
+Se ha elegido **Alpine + Bun comprimido con UPX** como imagen base por:
+- **Tamaño mínimo**: 85.3 MB (-69% vs debian)
+- **Velocidad óptima**: 16-20ms para 14 tests
+- **Seguridad**: 0 vulnerabilidades conocidas
+
+La documentación completa de la elección se encuentra en [elección de imágenes base](./docs/eleccion_imagenes_base_tests.md).
