@@ -82,7 +82,7 @@ Tiempo de ejecución de 14 tests unitarios (promedio de 50 iteraciones):
 
 ### 4.3 Análisis de seguridad (Trivy)
 
-Escaneo realizado el 2025-12-13 con Trivy:
+Escaneo realizado con Trivy el 2025-12-13:
 
 Para el análisis de seguridad se ha realizado el escaneo de las imágenes base con Trivy. Se elige esta herramienta por su grautidad (es una herramienta de código abierto) y amplia base de datos de vulnerabilidades conocidas, lo que nos permite obtener un análisis completo de las imágenes.
 
