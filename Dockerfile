@@ -30,4 +30,7 @@ COPY --from=builder /app/package.json ./
 ENV BUN_RUNTIME_TRANSPILER_CACHE_PATH=0
 WORKDIR /app/test
 
+RUN adduser -S usuario_no_privilegiado
+USER usuario_no_privilegiado
+
 ENTRYPOINT ["bun", "test"]
